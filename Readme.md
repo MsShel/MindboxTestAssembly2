@@ -1,3 +1,22 @@
+Пример использования
+```c#
+static void Main(string[] args)
+{
+    // Пример добавления пользовательской фигуры
+    var customShape = new CustomShape(6, 8);
+    AreaCalculator.RegisterHandler<CustomShape>(s => s.Width * s.Height);
+    Console.WriteLine($"Area of CustomShape: {AreaCalculator.CalculateArea(customShape)}");
+}
+
+// Пользовательская фигура
+public class CustomShape(double width, double height) : IAreaCalculatable
+{
+    public double Width { get; set; } = width;
+    public double Height { get; set; } = height;
+}
+```
+
+
 # GeometryLibrary2
 
 ## Assembly
